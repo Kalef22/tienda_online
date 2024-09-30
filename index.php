@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joyería Online</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -14,9 +15,11 @@
     </header>
 
     <nav>
-        <a href="">Menu 1</a>
-        <a href="">Menu 2</a>
-        <a href="">Menu 3</a>
+        <ul>
+            <li><a href="">Menu 1</a></li>
+            <li><a href="">Menu 2</a></li>
+            <li><a href="">Menu 3</a></li>
+        </ul>
     </nav>
 
     <section>
