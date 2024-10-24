@@ -50,6 +50,14 @@
                 <img src="img/anillo.jpg" alt="anillo">
             </div>
         </article>
+        <article>
+            <h2>Listar productos</h2>
+            <?php
+            include_once 'config/conexion.php';
+           
+            ?>
+            </h2>
+        </article>
     </section>
 
     <aside>

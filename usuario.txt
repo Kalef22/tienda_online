@@ -1,6 +1,0 @@
-
-nombre base de datos: tienda_online
-
-Usuario: admin
-
-Contraseña: NstF2@O@U6yBqaF6
