@@ -1,6 +1,6 @@
 <?php
-require_once 'includes/header.php';
-require_once 'includes/nav.php';
+require_once 'header.php';
+require_once 'nav.php';
 ?>
 <style>
 /* Establecer la altura máxima del carrusel para hacerlo mediano */
@@ -537,5 +537,5 @@ img {
 </section>
 </body>
 <?php 
-require_once 'includes/footer.php';
+require_once 'footer.php';
 ?>
