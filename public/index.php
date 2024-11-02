@@ -35,21 +35,21 @@ img {
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/home1.png" class="d-block w-100" alt="Imagen 1">
+                <img src="assets/img/home1.png" class="d-block w-100" alt="Imagen 1">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Primera imagen</h5>
                     <p>Descripción de la primera imagen.</p> -->
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img/home2.png" class=" d-block w-100" alt="Imagen 2">
+                <img src="assets/img/home2.png" class=" d-block w-100" alt="Imagen 2">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Segunda imagen</h5>
                     <p>Descripción de la segunda imagen.</p> -->
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img/home3.png" class="d-block w-100" alt="Imagen 3">
+                <img src="assets/img/home3.png" class="d-block w-100" alt="Imagen 3">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Tercera imagen</h5>
                     <p>Descripción de la tercera imagen.</p> -->
@@ -78,7 +78,7 @@ img {
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img src="img/anillos/oro_anillos/anillo_broderie.png" alt="">
+                    <img src="assets/img/anillos/oro_anillos/anillo1.png" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -91,7 +91,9 @@ img {
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                href="../views/detalle_producto.php">View
+                                options</a>
                         </div>
                     </div>
                 </div>
