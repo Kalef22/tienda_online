@@ -56,11 +56,11 @@
             <div class="row gx-4 gx-lg-5 align-items-center">
                 <!-- imagen 600x700 -->
                 <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
-                        src="../public/assets/img/anillos/oro_anillos/anillo1.png" alt="..." />
+                        src="../public/assets/img/anillos/anillo1.png" alt="..." />
                 </div>
                 <div class="col-md-6">
                     <div class="small mb-1">SKU: BST-498</div>
-                    <h1 class="display-5 fw-bolder">Shop item template</h1>
+                    <h1 class="display-5 fw-bolder">Anillo</h1>
                     <div class="fs-5 mb-5">
                         <span class="text-decoration-line-through">$45.00</span>
                         <span>$40.00</span>

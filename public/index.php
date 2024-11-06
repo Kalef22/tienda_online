@@ -78,7 +78,7 @@ img {
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img src="assets/img/anillos/oro_anillos/anillo1.png" alt="">
+                    <img src="assets/img/anillos/anillo1.png" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -105,7 +105,7 @@ img {
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
                     <!-- Product image-->
-                    <img src="img/collares/oro_collar/collar_cercle.png" alt="">
+                    <img src="assets/img/anillos/anillo2.png" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -138,7 +138,7 @@ img {
                     <!-- Sale badge-->
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
-                    <img src="img/anillo2.jpg" alt="">
+                    <img src="assets/img/anillos/anillo3.png" alt="">
                     <!-- Product image-->
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
@@ -162,7 +162,7 @@ img {
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="img/anillos/oro_anillos/anillo_broderie_fine.png" alt="..." />
+                    <img class="card-img-top" src="assets/img/anillos/anillo4.png" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -317,7 +317,7 @@ img {
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img src="img/anillo.jpg" alt="">
+                    <img src="img/anillo1.jpg" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">

@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/header.php';
-include_once 'includes/nav.php';
+include_once 'header.php';
+include_once 'nav.php';
 ?>
 <style>
 img {
@@ -10,8 +10,8 @@ img {
 </style>
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <img src="img/logotipo_joyeria.png" alt="">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center mb-4">
+            <img src="assets/img/logo.png" alt="">
         </div>
         <p>Desde 1995, en Joyería Victoria nos hemos dedicado a capturar momentos inolvidables y a transformar
             emociones en joyas únicas. Con más de 25 años de historia, somos una joyería familiar comprometida con
@@ -34,4 +34,4 @@ img {
     </div>
 </section>
 <?php
-include_once "includes/footer.php" ?>
+include_once "footer.php" ?>
