@@ -3,25 +3,71 @@ require_once 'header.php';
 require_once 'nav.php';
 ?>
 <style>
-/* Establecer la altura máxima del carrusel para hacerlo mediano */
-#myCarousel {
-    max-height: auto;
-    /* Ajusta el valor según el tamaño deseado */
-}
+    /* Establecer la altura máxima del carrusel para hacerlo mediano */
+    #myCarousel {
+        max-height: auto;
+        /* Ajusta el valor según el tamaño deseado */
+    }
 
-/* Estilo para las imágenes del carrusel */
-#myCarousel img {
-    height: auto;
-    width: auto;
-    object-fit: contain;
-    /* Mantener proporción y llenar el contenedor */
-}
+    /* Estilo para las imágenes del carrusel */
+    #myCarousel img {
+        height: auto;
+        width: auto;
+        object-fit: contain;
+        /* Mantener proporción y llenar el contenedor */
+    }
 
-img {
-    /* width: 100%;
+    img {
+        /* width: 100%;
     height: auto; */
-    object-fit: cover;
-}
+        object-fit: cover;
+    }
+</style>
+<style>
+    /* resaltar la tarjeta del producto cuando el usuario pasa el cursor sobre ella. */
+    .card:hover {
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* .card:hover .card-img-overlay {
+        opacity: 1;
+    } */
+</style>
+<style>
+    /* Botón de categoría personalizado */
+    .btn-category {
+        color: #ffffff;
+        background: linear-gradient(45deg, #b388ff, #8c9eff);
+        /* Degradado suave */
+        border: none;
+        border-radius: 30px;
+        /* Bordes redondeados */
+        padding: 10px 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        /* Sombra */
+        transition: all 0.3s ease;
+    }
+
+    /* Hover y estilos activos */
+    .btn-category:hover {
+        background: linear-gradient(45deg, #8c9eff, #b388ff);
+        /* Invertir colores en hover */
+        color: #f8f9fa;
+        transform: translateY(-2px);
+        /* Efecto de elevación */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        /* Sombra más intensa */
+    }
+
+    .btn-category:active {
+        transform: translateY(0);
+        /* Efecto de "presión" */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
 </style>
 <!-- CARRUSEL INICIO -->
 <div class="container-sm">
@@ -68,6 +114,18 @@ img {
     </div>
 </div>
 <!-- CARRUSEL FIN -->
+
+<div class="container my-4">
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-category mx-2" onclick="filtrarCategoria('anillos')">Anillos</button>
+        <button class="btn btn-category mx-2" onclick="filtrarCategoria('pulseras')">Pulseras</button>
+        <button class="btn btn-category mx-2" onclick="filtrarCategoria('collares')">Collares</button>
+        <button class="btn btn-category mx-2" onclick="filtrarCategoria('pendientes')">Pendientes</button>
+    </div>
+</div>
+
+
+
 
 <!-- Section-->
 <section class="py-5">
@@ -538,6 +596,14 @@ img {
     </div>
 </section>
 </body>
-<?php 
+<?php
 require_once 'footer.php';
 ?>
+<script>
+    function filtrarCategoria(categoria) {
+        const productos = document.querySelectorAll('.producto');
+        productos.forEach(producto => {
+            producto.style.display = producto.classList.contains(categoria) ? 'block' : 'none';
+        });
+    }
+</script>
