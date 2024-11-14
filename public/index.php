@@ -69,6 +69,64 @@ require_once 'nav.php';
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     }
 </style>
+<style>
+    /* Estilo de color dorado personalizado para el encabezado */
+    .text-gold {
+        color: #FFD700;
+        /* Color dorado */
+    }
+
+    /* Estilo para el fondo oscuro y texto claro */
+    header.bg-dark {
+        background-color: #212529;
+        /* Fondo oscuro con un toque elegante */
+    }
+
+    header .btn-outline-light {
+        border-color: #FFD700;
+        /* Botón con borde dorado */
+        color: #FFD700;
+        /* Texto dorado */
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    header .btn-outline-light:hover {
+        background-color: #FFD700;
+        /* Fondo dorado en hover */
+        color: #212529;
+        /* Texto oscuro al hacer hover */
+        transform: translateY(-2px);
+        /* Efecto de elevación */
+    }
+
+    /* Personalización de la tipografía para dar un aire elegante */
+    h1.display-4 {
+        font-family: 'Playfair Display', serif;
+        /* Fuente elegante y clásica */
+        font-weight: 700;
+    }
+
+    p.lead {
+        font-family: 'Lora', serif;
+        /* Fuente serif elegante */
+        font-style: italic;
+    }
+
+    /* Sombra sutil para los textos */
+    .text-white-50 {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        /* Sombra suave en el texto */
+    }
+
+    /* Ajustes de la altura del encabezado en dispositivos pequeños */
+    @media (max-width: 767px) {
+        header {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+</style>
 <!-- CARRUSEL INICIO -->
 <div class="container-sm">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -359,10 +417,15 @@ require_once 'nav.php';
 
     <!-- Header-->
     <header class="bg-dark py-5">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@1,400&display=swap"
+            rel="stylesheet">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                <h1 class="display-4 fw-bolder">Compra con estilo</h1>
+                <p class="lead fw-normal text-white-50 mb-0">"Regálate un lujo que durará toda la vida o sorprende a
+                    alguien especial con un detalle
+                    inolvidable."</p>
             </div>
         </div>
     </header>
