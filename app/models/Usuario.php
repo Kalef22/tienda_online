@@ -1,16 +1,40 @@
 <?php
+
 class Usuario{
     private $pdo;
     private $error = [];
+    const DB_HOST = "localhost";
+    const DB_NAME = "tienda_online";
+    const DB_USER = "admin";
+    const DB_PASS = "NstF2@O@U6yBqaF6";
+  
     
-    public function __contruct(){
-        require_once 'config/config.php';
-        try{
-            $dns = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
-            $this->pdo = new PDO($dns, DB_USER, DB_PASS);
+    public function __construct() {
+        try {
+            
+            $dsn = "mysql:host=" . self::DB_HOST . ";dbname=" . self::DB_NAME;
+            $this->pdo = new PDO($dsn, self::DB_USER, self::DB_PASS);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }catch(PDOException $e){
-            $this->error['error_conexion'] = "Error de conexion: ".$e->getMessage();
+        } catch (PDOException $e) {
+            $this->error['error_conexion'] = "Error de conexion: " . $e->getMessage();
+        }
+    }
+
+    public function getErrors() {
+        return $this->error;
+    }
+
+    public function login($email, $password) {
+        try{
+            $query = 'SELECT nombre, apellido1, apellido2, email, direccion, telefono FROM cliente WHERE email = :email AND contrasenia = :contrasenia';
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt->bindParam(':contrasenia', $password, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            $this->error['error_login'] = "Error al iniciar sesión: " . $e->getMessage();
+            return false;
         }
     }
 

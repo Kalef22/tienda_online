@@ -86,7 +86,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><img src="assets/img/logo.png" alt=""></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -104,6 +104,12 @@
                             <li><a class="dropdown-item" href="#!">Productos recomendados</a></li>
                             <li><a class="dropdown-item" href="#!">Nuevos productos</a></li>
                         </ul>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav" style="list-style: none;">
+                    <li class=" nav-item">
+                        <a class="nav-link" href="../views/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
                     </li>
                 </ul>
                 <form class="d-flex">

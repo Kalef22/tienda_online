@@ -3,129 +3,71 @@ require_once 'header.php';
 require_once 'nav.php';
 ?>
 <style>
-    /* Establecer la altura máxima del carrusel para hacerlo mediano */
-    #myCarousel {
-        max-height: auto;
-        /* Ajusta el valor según el tamaño deseado */
-    }
+/* Establecer la altura máxima del carrusel para hacerlo mediano */
+#myCarousel {
+    max-height: auto;
+    /* Ajusta el valor según el tamaño deseado */
+}
 
-    /* Estilo para las imágenes del carrusel */
-    #myCarousel img {
-        height: auto;
-        width: auto;
-        object-fit: contain;
-        /* Mantener proporción y llenar el contenedor */
-    }
+/* Estilo para las imágenes del carrusel */
+#myCarousel img {
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    /* Mantener proporción y llenar el contenedor */
+}
 
-    img {
-        /* width: 100%;
+img {
+    /* width: 100%;
     height: auto; */
-        object-fit: cover;
-    }
+    object-fit: cover;
+}
 </style>
 <style>
-    /* resaltar la tarjeta del producto cuando el usuario pasa el cursor sobre ella. */
-    .card:hover {
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        transform: scale(1.05);
-        transition: all 0.3s ease-in-out;
-    }
+/* resaltar la tarjeta del producto cuando el usuario pasa el cursor sobre ella. */
+.card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
 
-    /* .card:hover .card-img-overlay {
+/* .card:hover .card-img-overlay {
         opacity: 1;
     } */
 </style>
 <style>
-    /* Botón de categoría personalizado */
-    .btn-category {
-        color: #ffffff;
-        background: linear-gradient(45deg, #b388ff, #8c9eff);
-        /* Degradado suave */
-        border: none;
-        border-radius: 30px;
-        /* Bordes redondeados */
-        padding: 10px 20px;
-        font-weight: 600;
-        text-transform: uppercase;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        /* Sombra */
-        transition: all 0.3s ease;
-    }
+/* Botón de categoría personalizado */
+.btn-category {
+    color: #ffffff;
+    background: linear-gradient(45deg, #7b1fa2, #3949ab);
+    /* Degradado suave */
+    border: none;
+    border-radius: 30px;
+    /* Bordes redondeados */
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Sombra */
+    transition: all 0.3s ease;
+}
 
-    /* Hover y estilos activos */
-    .btn-category:hover {
-        background: linear-gradient(45deg, #8c9eff, #b388ff);
-        /* Invertir colores en hover */
-        color: #f8f9fa;
-        transform: translateY(-2px);
-        /* Efecto de elevación */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        /* Sombra más intensa */
-    }
+/* Hover y estilos activos */
+.btn-category:hover {
+    /* Invertir colores en hover */
+    background: linear-gradient(45deg, #8e44ad, #2c3e50);
+    color: #f8f9fa;
+    transform: translateY(-3px);
+    /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra más intensa */
+}
 
-    .btn-category:active {
-        transform: translateY(0);
-        /* Efecto de "presión" */
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
-</style>
-<style>
-    /* Estilo de color dorado personalizado para el encabezado */
-    .text-gold {
-        color: #FFD700;
-        /* Color dorado */
-    }
-
-    /* Estilo para el fondo oscuro y texto claro */
-    header.bg-dark {
-        background-color: #212529;
-        /* Fondo oscuro con un toque elegante */
-    }
-
-    header .btn-outline-light {
-        border-color: #FFD700;
-        /* Botón con borde dorado */
-        color: #FFD700;
-        /* Texto dorado */
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-
-    header .btn-outline-light:hover {
-        background-color: #FFD700;
-        /* Fondo dorado en hover */
-        color: #212529;
-        /* Texto oscuro al hacer hover */
-        transform: translateY(-2px);
-        /* Efecto de elevación */
-    }
-
-    /* Personalización de la tipografía para dar un aire elegante */
-    h1.display-4 {
-        font-family: 'Playfair Display', serif;
-        /* Fuente elegante y clásica */
-        font-weight: 700;
-    }
-
-    p.lead {
-        font-family: 'Lora', serif;
-        /* Fuente serif elegante */
-        font-style: italic;
-    }
-
-    /* Sombra sutil para los textos */
-    .text-white-50 {
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        /* Sombra suave en el texto */
-    }
-
-    /* Ajustes de la altura del encabezado en dispositivos pequeños */
-    @media (max-width: 767px) {
-        header {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-    }
+.btn-category:active {
+    transform: translateY(0);
+    /* Efecto de "presión" */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
 </style>
 <!-- CARRUSEL INICIO -->
 <div class="container-sm">
@@ -179,11 +121,9 @@ require_once 'nav.php';
         <button class="btn btn-category mx-2" onclick="filtrarCategoria('pulseras')">Pulseras</button>
         <button class="btn btn-category mx-2" onclick="filtrarCategoria('collares')">Collares</button>
         <button class="btn btn-category mx-2" onclick="filtrarCategoria('pendientes')">Pendientes</button>
+        <button class="btn btn-category mx-2" onclick="filtrarCategoria('aros')">Aros</button>
     </div>
 </div>
-
-
-
 
 <!-- Section-->
 <section class="py-5">
@@ -663,10 +603,10 @@ require_once 'nav.php';
 require_once 'footer.php';
 ?>
 <script>
-    function filtrarCategoria(categoria) {
-        const productos = document.querySelectorAll('.producto');
-        productos.forEach(producto => {
-            producto.style.display = producto.classList.contains(categoria) ? 'block' : 'none';
-        });
-    }
+function filtrarCategoria(categoria) {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(producto => {
+        producto.style.display = producto.classList.contains(categoria) ? 'block' : 'none';
+    });
+}
 </script>
