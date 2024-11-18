@@ -1,6 +1,6 @@
 <?php
-require_once '../views/includes/header.php';
-require_once '../views/includes/nav.php';   
+include_once './includes/header.php';
+include_once './includes/nav.php';   
 ?>
 <body>
     <!-- Contenido principal -->
@@ -28,4 +28,4 @@ require_once '../views/includes/nav.php';
     </div>
 
     <!-- Incluir pie de página -->
-    <?php include '../views/includes/footer.php'; ?>
+    <?php include_once './includes/footer.php'; ?>

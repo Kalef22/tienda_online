@@ -58,7 +58,7 @@
 
     <!-- Aplicar las fuentes en CSS -->
     <style>
-    /* .navbar-brand {
+    .navbar-brand {
         font-family: 'Georgia', serif;
     }
 
@@ -66,17 +66,17 @@
     .btn,
     .dropdown-item {
         font-family: 'Roboto', sans-serif;
-    } */
+    } 
 
     /* <uniquifier>: Use a unique and descriptive class name
       <weight>: Use a value from 400 to 900 */
 
-    /* .navbar-brand {
+     .navbar-brand {
         font-family: "Playfair Display", serif;
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
-    } */
+    }
     </style>
 
     <!-- Navigation Inicio-->
@@ -109,7 +109,7 @@
                 </ul>
                 <ul class="navbar-nav" style="list-style: none;">
                     <li class=" nav-item">
-                        <a class="nav-link" href="/app/views/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
+                        <a class="nav-link" href="./app/views/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
                     </li>
                 </ul>
                 <form class="d-flex">
