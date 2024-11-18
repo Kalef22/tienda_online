@@ -1,6 +1,7 @@
 <?php
-require_once '../includes/header.php';
-require_once '../includes/navbar.php';
+include './app/views/includes/header.php';
+include './app/views/includes/nav.php';
+
 ?>
 <style>
 /* Establecer la altura máxima del carrusel para hacerlo mediano */
@@ -134,7 +135,7 @@ img {
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img src="assets/img/anillos/anillo1.png" class="card-img-top" alt="">
+                    <img src="assets/img/anillos/anillo1.png" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -161,7 +162,7 @@ img {
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
                     <!-- Product image-->
-                    <img src="assets/img/anillos/anillo2.png" class="card-img-top" alt="">
+                    <img src="assets/img/anillos/anillo2.png" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -194,7 +195,7 @@ img {
                     <!-- Sale badge-->
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
-                    <img src="assets/img/anillos/anillo3.png" class="card-img-top" alt="">
+                    <img src="assets/img/anillos/anillo3.png" alt="">
                     <!-- Product image-->
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
@@ -378,7 +379,7 @@ img {
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img src="img/anillo1.jpg" class="card-img-top" alt="">
+                    <img src="img/anillo1.jpg" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -403,7 +404,7 @@ img {
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
                     <!-- Product image-->
-                    <img src="img/anillo1.jpg" class="card-img-top" alt="">
+                    <img src="img/anillo1.jpg" alt="">
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -436,7 +437,7 @@ img {
                     <!-- Sale badge-->
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
-                    <img src="img/anillo2.jpg" class="card-img-top" alt="">
+                    <img src="img/anillo2.jpg" alt="">
                     <!-- Product image-->
                     <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
@@ -600,7 +601,7 @@ img {
 </section>
 </body>
 <?php
-require_once 'footer.php';
+require_once './app/views/includes/footer.php';
 ?>
 <script>
 function filtrarCategoria(categoria) {

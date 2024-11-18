@@ -1,34 +1,7 @@
 <?php
-require_once '../config/config.php';
+require_once '../views/includes/header.php';
+require_once '../views/includes/nav.php';   
 ?>
-<style>
-/* Estilos para el diseño de "sticky footer" */
-html,
-body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    flex: 1;
-}
-
-footer {
-    background: #f8f9fa;
-    padding: 1rem 0;
-    text-align: center;
-}
-</style>
-</head>
-<?php
-require_once '../public/header.php';
-require_once '../public/nav.php';
-?>
-
 <body>
     <!-- Contenido principal -->
     <div class="content">
@@ -55,9 +28,4 @@ require_once '../public/nav.php';
     </div>
 
     <!-- Incluir pie de página -->
-    <?php include '../public/footer.php'; ?>
-
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="../public/assets/js/scripts.js"></script>
+    <?php include '../views/includes/footer.php'; ?>
