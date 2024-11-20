@@ -1,6 +1,7 @@
 <?php
-include_once 'header.php';
-include_once 'nav.php';
+$title = "Sobre Nosotros";
+include_once '../includes/header.php';
+include_once '../includes/nav.php';
 ?>
 <style>
 img {
@@ -34,4 +35,4 @@ img {
     </div>
 </section>
 <?php
-include_once "footer.php" ?>
+include_once "../includes/footer.php" ?>

@@ -1,54 +1,3 @@
-<!-- <style>
-/* Cambiar el esquema de colores de fondo y texto */
-/* Estilos personalizados */
-.navbar {
-    background-color: #f8f9fa;
-    /* Fondo claro */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra ligera para darle dimensión */
-}
-
-.navbar-brand {
-    color: #b39d53;
-    /* Color dorado */
-    font-weight: bold;
-    font-family: 'Georgia', serif;
-}
-
-.navbar-nav .nav-link {
-    color: #333333;
-    font-weight: 500;
-}
-
-.nav-link:hover {
-    color: #b39d53;
-    /* Efecto hover dorado */
-}
-
-.dropdown-menu {
-    background-color: #f8f9fa;
-    /* Fondo claro en el menú desplegable */
-    border: 1px solid #b39d53;
-}
-</style> -->
-<!-- <style>
-/* Aplicar un diseño más elegante al botón del carrito: */
-.btn-outline-dark {
-    color: #333333;
-    border-color: #b39d53;
-}
-
-.btn-outline-dark:hover {
-    background-color: #b39d53;
-    color: #ffffff;
-}
-
-.badge {
-    background-color: #b39d53;
-}
-</style> -->
-
-
 <body>
     <!-- Link a Google Fonts en la sección <head> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobreNosotros.php">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="views/informacion/sobreNosotros.php">Sobre nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
@@ -109,7 +58,7 @@
                 </ul>
                 <ul class="navbar-nav" style="list-style: none;">
                     <li class=" nav-item">
-                        <a class="nav-link" href="./app/views/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
+                        <a class="nav-link" href="views/usuarios/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -123,4 +72,3 @@
         </div>
     </nav>
     <!-- Navigation Fin-->
-</body>

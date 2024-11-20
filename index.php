@@ -1,7 +1,7 @@
 <?php
-include './app/views/includes/header.php';
-include './app/views/includes/nav.php';
-
+$title = "Inicio";
+include('views/includes/header.php');
+include('views/includes/nav.php');
 ?>
 <style>
 /* Establecer la altura máxima del carrusel para hacerlo mediano */
@@ -601,7 +601,7 @@ img {
 </section>
 </body>
 <?php
-require_once './app/views/includes/footer.php';
+require_once 'views/includes/footer.php';
 ?>
 <script>
 function filtrarCategoria(categoria) {

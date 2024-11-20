@@ -24,9 +24,9 @@ class Usuario{
         return $this->error;
     }
 
-    public function login($email, $password) {
+    public function iniciarSesion($email, $password) {
         try{
-            $query = 'SELECT nombre, apellido1, apellido2, email, direccion, telefono FROM cliente WHERE email = :email AND contrasenia = :contrasenia';
+            $query = 'SELECT id_cliente,nombre, apellido1, apellido2, email, direccion, telefono FROM cliente WHERE email = :email AND contrasenia = :contrasenia';
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->bindParam(':contrasenia', $password, PDO::PARAM_STR);
@@ -38,14 +38,22 @@ class Usuario{
         }
     }
 
-    public function crearUsuario($nombre, $apellido1, $apellido2, $email, $contrasenia){
+    public function cerrarSesion() {
+        session_start();
+        session_destroy();
+        header('Location: ../index.php');
+    }
+
+    public function crearUsuario($nombre, $apellido1, $apellido2, $email, $direccion, $telefono, $contrasenia){
         try{
-        $query_crear = "INSERT INTO nombre, apellido1, apellido2 email, contrasenia";
+        $query_crear = "INSERT INTO cliente (nombre, apellido1, apellido2, email, direccion, telefono, contrasenia) VALUES (:nombre, :apellido1, :apellido2, :email, :direccion, :telefono, :contrasenia)";
         $stmt_crear = $this->pdo->prepare($query_crear);
         $stmt_crear->bindParam(':nombre', $nombre, PDO::PARAM_STR);
         $stmt_crear->bindParam(':nombre', $apellido1, PDO::PARAM_STR);
         $stmt_crear->bindParam(':nombre', $apellido2, PDO::PARAM_STR);
         $stmt_crear->bindParam(':nombre', $email, PDO::PARAM_STR);
+        $stmt_crear->bindParam(':nombre', $direccion, PDO::PARAM_STR);
+        $stmt_crear->bindParam(':nombre', $telefono, PDO::PARAM_STR);
         $stmt_crear->bindParam(':nombre', $contrasenia, PDO::PARAM_STR);
         $stmt_crear->execute();
         return true;
@@ -122,5 +130,18 @@ class Usuario{
             return false;
         }
         
+    }
+
+    public function obtenerUsuario($id){
+        try{
+            $query_obtener = "SELECT id_usuario, nombre, apellido1, apellido2, email, rol FROM usuario WHERE id_usuario = :id_usuario";
+            $stmt_obtener = $this->pdo->prepare($query_obtener);
+            $stmt_obtener->bindParam(':id_usuario', $id, PDO::PARAM_INT);
+            $stmt_obtener->execute();
+            return $stmt_obtener->fetch(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            $error['error_obtener'] = "Error al obtener usuario: ".$e->getMessage();
+            return false;
+        }
     }
 }
