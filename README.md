@@ -1,3 +1,5 @@
+Se esta usando el MVC para la implementacion de archivos.
+
 Esquema que seguire.
 
 /tienda_online
