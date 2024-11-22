@@ -1,8 +1,11 @@
 <?php
 $title = "Inicio";
-$cabecera = "views/includes/";
-require_once $cabecera.'header.php';
-require_once $cabecera.'navbar.php';
+$cabecera_path = "views/includes/";
+$header_path = $cabecera_path . "header.php";
+$nav_path = $cabecera_path . "nav.php";
+require_once $header_path;
+require_once $nav_path;
+
 // $date = new datetime();
 // echo $date->format('Y-m-d H:i:s');
 ?>
