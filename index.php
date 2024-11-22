@@ -1,7 +1,8 @@
 <?php
 $title = "Inicio";
-// require_once '../views/includes/header.php';
-// require_once '../views/includes/navbar.php';
+$cabecera = "../views/includes/";
+require_once $cabecera.'header.php';
+require_once $cabecera.'navbar.php';
 // $date = new datetime();
 // echo $date->format('Y-m-d H:i:s');
 ?>
