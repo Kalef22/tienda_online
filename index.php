@@ -1,9 +1,9 @@
 <?php
 $title = "Inicio";
-include('views/includes/header.php');
-include('views/includes/nav.php');
-$date = new datetime();
-echo $date->format('Y-m-d H:i:s');
+require_once 'views/includes/header.php';
+require_once 'views/includes/navbar.php';
+// $date = new datetime();
+// echo $date->format('Y-m-d H:i:s');
 ?>
 <style>
 /* Establecer la altura máxima del carrusel para hacerlo mediano */

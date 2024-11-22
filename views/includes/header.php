@@ -11,5 +11,5 @@
     <!-- Custom CSS -->
     <link href="assets/css/styles.css" rel="stylesheet">
     <!-- Establecer ruta base -->
-    <base href="/tienda_online/"> 
+    <!-- <base href="/tienda_online/">  -->
 </head>
