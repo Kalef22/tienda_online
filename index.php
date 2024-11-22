@@ -1,7 +1,7 @@
 <?php
 $title = "Inicio";
-require_once 'views/includes/header.php';
-require_once 'views/includes/navbar.php';
+// require_once '../views/includes/header.php';
+// require_once '../views/includes/navbar.php';
 // $date = new datetime();
 // echo $date->format('Y-m-d H:i:s');
 ?>
