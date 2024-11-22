@@ -3,10 +3,14 @@
 class Usuario{
     private $pdo;
     private $error = [];
-    const DB_HOST = "localhost";
-    const DB_NAME = "tienda_online";
-    const DB_USER = "admin";
-    const DB_PASS = "NstF2@O@U6yBqaF6";
+    // const DB_HOST = "localhost";
+    // const DB_NAME = "tienda_online";
+    // const DB_USER = "admin";
+    // const DB_PASS = "NstF2@O@U6yBqaF6";
+    const DB_HOST = "";
+    const DB_NAME = "";
+    const DB_USER = "root";
+    const DB_PASS = "";
   
     
     public function __construct() {
