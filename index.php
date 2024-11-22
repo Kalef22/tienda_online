@@ -23,7 +23,8 @@ function cargarControlador($controller, $action = 'index') {
             die("Acción no encontrada: $action");
         }
     } else {
-        include 'views/404.php'; // Archivo no encontrado
+        //include 'views/404.php'; // Archivo no encontrado
+        include 'insertar.php';
     }
 }
 
