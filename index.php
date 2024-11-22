@@ -1,6 +1,4 @@
 <?php
-$db_host = getenv('DB_HOST');
-echo $db_host;
 // --------------------- ENRUTADOR CON SOPORTE PARA CONTROLADORES ---------------------
 
 // Obtiene las rutas solicitadas
