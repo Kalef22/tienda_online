@@ -8,7 +8,7 @@
         public function mostrarProductos(){
             $producto = new Producto();
             $productos = $producto->mostrarProductos(); // Llamar al modelo para obtener los productos
-            include '../views/producto.php'; //Incluir la vista con los productos
+            include 'views/p/producto.php'; //Incluir la vista con los productos
             // return $productos;
         }
 

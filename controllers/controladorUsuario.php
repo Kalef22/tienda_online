@@ -7,7 +7,7 @@
         public function iniciarSesion($email, $password){
             $usuario = new Usuario();
             $usuario = $usuario->iniciarSesion($email, $password); // Llamar al modelo para iniciar sesión
-            return $usuario;
+            include 'views/usuarios/login.php'; // Incluir la vista de inicio de sesión
         }
 
         // Método para cerrar sesión

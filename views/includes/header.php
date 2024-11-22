@@ -1,3 +1,7 @@
+<?php
+    // $base_path = "/";
+    $base_path = "/tienda_online/";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,5 +15,5 @@
     <!-- Custom CSS -->
     <link href="assets/css/styles.css" rel="stylesheet">
     <!-- Establecer ruta base -->
-    <!-- <base href="/tienda_online/">  -->
+    <base href="<?php $base_path ?>"> 
 </head>
