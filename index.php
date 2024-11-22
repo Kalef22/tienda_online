@@ -1,6 +1,6 @@
 <?php
 $title = "Inicio";
-$cabecera = "/views/includes/";
+$cabecera = "views/includes/";
 require_once $cabecera.'header.php';
 require_once $cabecera.'navbar.php';
 // $date = new datetime();
