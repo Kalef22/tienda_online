@@ -23,8 +23,9 @@ function cargarControlador($controller, $action = 'index') {
             die("Acción no encontrada: $action");
         }
     } else {
-        //include 'views/404.php'; // Archivo no encontrado
-        include 'insertar.php';
+        echo "error cargar controlador";
+        include 'views/404.php'; // Archivo no encontrado
+       
     }
 }
 
@@ -44,5 +45,7 @@ if (array_key_exists($ruta, $rutas)) {
     $action = $rutas[$ruta][1];
     cargarControlador($controller, $action);
 } else {
-    include 'views/404.php';
+    echo "error array_key_exists";
+    // include 'views/404.php';
+    include 'insertar.php';
 }
