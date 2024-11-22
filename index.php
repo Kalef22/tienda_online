@@ -4,7 +4,7 @@
 // Obtiene las rutas solicitadas
 $request_uri = $_SERVER['REQUEST_URI'];
 // Obtiene la ruta base
-$base_path = "/tienda_online/";
+$base_path = "/";
 // Elimina la ruta base y contendrá la parte de la URI que sigue a la ruta base,
 $ruta = str_replace($base_path, '', $request_uri);
 // Obtener la parte de la ruta antes del primer signo de interrogación ?
