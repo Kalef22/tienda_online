@@ -1,3 +1,8 @@
+<?php
+    $informacion_path = "views/informacion/";
+    $sobreNosotros_path = $informacion_path . "sobreNosotros.php";
+?>
+
 <body>
     <!-- Link a Google Fonts en la sección <head> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

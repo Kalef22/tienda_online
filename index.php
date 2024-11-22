@@ -1,7 +1,7 @@
 <?php
 $title = "Inicio";
-$cabecera_path = "views/includes/";
-$header_path = $cabecera_path . "header.php";
+$includes_path = "views/includes/";
+$header_path = $includes_path . "header.php";
 $nav_path = $cabecera_path . "nav.php";
 require_once $header_path;
 require_once $nav_path;
