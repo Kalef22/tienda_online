@@ -12,33 +12,29 @@ $ruta = strtok($route, '?');
 
 
 // Función para cargar controladores dinámicamente
-function cargarControlador($controlador, $accion = 'index')
-{
-    // Utiliza la sintaxis de interpolación de variables en PHP para construir una cadena de texto
-    $archivo_controlador = "controllers/{$controlador}.php";
+function cargarControlador($controller, $action = 'index') {
+    $controller_file = "controllers/{$controller}.php";
 
-    // verifica si un archivo o directorio existe en la ruta especificada por $archivo_controlador.
-    if (file_exists($archivo_controlador)) {
-        include_once $archivo_controlador;
-        // Verifica si una función existe
-        if (function_exists($accion)) {
-            $accion();
+    if (file_exists($controller_file)) {
+        include $controller_file;
+        if (function_exists($action)) {
+            $action(); // Llama a la acción dentro del controlador
         } else {
-            die("Acción no encontrada: $accion");
+            die("Acción no encontrada: $action");
         }
     } else {
-        include 'views/404.php';
+        include 'views/404.php'; // Archivo no encontrado
     }
-
 }
+
 
 // Tabla de rutas 
 $rutas = [
-    '/' => ['informacionController', 'inicio'],
-    '/usuarios/login' => ['usuariosController', 'login'],
-    '/usuarios/register' => ['usuariosController', 'register'],
-    '/informacion/sobreNosotros' => ['informacionController', 'sobreNosotros'],
-    '/informacion/contacto' => ['informacionController', 'contacto'],
+    '/' => ['informacionController', 'index'],
+    'views/usuarios/login' => ['usuariosController', 'login'],
+    'views/usuarios/register' => ['usuariosController', 'register'],
+    'views/informacion/sobreNosotros' => ['informacionController', 'sobreNosotros'],
+    'views/informacion/contacto' => ['informacionController', 'contacto'],
 ];
 
 // Procesar la ruta
