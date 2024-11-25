@@ -3,40 +3,40 @@ name: Configuración de Base de Datos
 on:
   push:
     branches:
-      - main  # Este workflow se ejecuta en el push a la rama main
+      - main
 
 jobs:
   setup-database:
-    runs-on: ubuntu-latest  # Usamos un runner con Ubuntu
+    runs-on: ubuntu-latest
 
     services:
       mysql:
-        image: mysql:8.0  # Usamos la imagen oficial de MySQL
+        image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: root_password  # Contraseña del usuario root de MySQL
+          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
         ports:
-          - 3306:3306  # Exponemos el puerto 3306
+          - 3306:3306
 
     steps:
       - name: Checkout del código
-        uses: actions/checkout@v3  # Este paso sirve para obtener el código del repositorio
+        uses: actions/checkout@v3
 
       - name: Configurar variables de entorno con secretos
         env:
-          DB_USERNAME: ${{ secrets.DB_USERNAME }}  # Cargar el nombre de usuario desde los secretos
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Cargar la contraseña desde los secretos
-          DB_HOST: ${{ secrets.DB_HOST }}  # Cargar el host desde los secretos
-          DB_PORT: 3306  # Puedes definir el puerto aquí si siempre es el mismo
-          DB_NAME: ${{ secrets.DB_NAME }}  # Cargar la base de datos desde los secretos
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_HOST: localhost
+          DB_PORT: 3306
+          DB_NAME: ${{ secrets.DB_NAME }}
 
       - name: Crear usuario en MySQL
         run: |
           echo "Creando usuario de base de datos..."
-          mysql -u root -p$MYSQL_ROOT_PASSWORD -h ${DB_HOST} -P ${DB_PORT} -e "CREATE USER '${DB_USERNAME}'@'%' IDENTIFIED BY '${DB_PASSWORD}';"
-          mysql -u root -p$MYSQL_ROOT_PASSWORD -h ${DB_HOST} -P ${DB_PORT} -e "GRANT ALL PRIVILEGES ON *.* TO '${DB_USERNAME}'@'%';"
-          mysql -u root -p$MYSQL_ROOT_PASSWORD -h ${DB_HOST} -P ${DB_PORT} -e "FLUSH PRIVILEGES;"
+          mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -h localhost -P 3306 -e "CREATE USER '${{ secrets.DB_USERNAME }}'@'%' IDENTIFIED BY '${{ secrets.DB_PASSWORD }}';"
+          mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -h localhost -P 3306 -e "GRANT ALL PRIVILEGES ON *.* TO '${{ secrets.DB_USERNAME }}'@'%';"
+          mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -h localhost -P 3306 -e "FLUSH PRIVILEGES;"
 
       - name: Verificar conexión con el usuario
         run: |
-          echo "Probando conexión con el usuario ${DB_USERNAME}..."
-          mysql -u ${DB_USERNAME} -p${DB_PASSWORD} -h ${DB_HOST} -P ${DB_PORT} -e "SHOW DATABASES;"
+          echo "Probando conexión con el usuario..."
+          mysql -u ${{ secrets.DB_USERNAME }} -p${{ secrets.DB_PASSWORD }} -h localhost -P 3306 -e "SHOW DATABASES;"
