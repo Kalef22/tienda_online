@@ -26,6 +26,7 @@ jobs:
           DB_USERNAME: ${{ secrets.DB_USERNAME }}  # Cargar el nombre de usuario desde los secretos
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Cargar la contraseña desde los secretos
           DB_HOST: ${{ secrets.DB_HOST }}  # Cargar el host desde los secretos
+          DB_PORT: 3306  # Puedes definir el puerto aquí si siempre es el mismo
           DB_NAME: ${{ secrets.DB_NAME }}  # Cargar la base de datos desde los secretos
 
       - name: Crear usuario en MySQL
