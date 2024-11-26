@@ -1,5 +1,7 @@
 <?php
+require_once 'config/config.php';
 try{
+    $pdo = (new conexion())->getConexion();
     $pdo = new PDO('mysql:host=localhost,dbname=tienda_online', 'root', '');
 
     $query_listar ="SELECT id_cliente, nombre, apellido1, apellido2, email, rol FROM cliente";
