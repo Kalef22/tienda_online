@@ -4,7 +4,7 @@ try{
     $pdo = (new conexion())->getConexion();
 
     $query_listar ="SELECT id_cliente, nombre, apellido1, apellido2, email, rol FROM cliente";
-    $stmt_listar = $this->pdo->prepare($query_listar);
+    $stmt_listar = $pdo->prepare($query_listar);
     $stmt_listar->execute();
     $usuarios = $stmt_listar->fetchAll(PDO::FETCH_ASSOC);
     if(count($usuarios)>0){
