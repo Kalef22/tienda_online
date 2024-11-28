@@ -1,7 +1,7 @@
 <?php
     // Incluir el modelo de Producto
     // include_once '../models/Producto.php';
-    include_once(__DIR__ . '/../models/Producto.php');
+     // include_once(__DIR__ . '/../models/Producto.php');
 
     class ControladorProducto{
         // Método para mostrar todos los productos

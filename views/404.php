@@ -6,6 +6,7 @@
     <title>Error 404</title>
 </head>
 <body>
-    <h2>Error 404</h2>
+    <h1>Error 404</h1>
+    <p>La página solicitada no existe.</p>
 </body>
 </html>

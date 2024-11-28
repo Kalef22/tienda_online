@@ -1,7 +1,12 @@
 <?php
-// config.php
-require 'vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+require_once __DIR__ . '/../vendor/autoload.php';
+// __DIR__ se refiere al directorio actual donde está el archivo config.php.
+// ../ sube un nivel al directorio raíz del proyecto.
+
+use Dotenv\Dotenv;
+
+// Carga el archivo .env desde la raíz del proyecto
+$dotenv = Dotenv::createImmutable(__DIR__.'/../');
 $dotenv->load();
 
 class Conexion {
