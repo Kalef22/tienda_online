@@ -4,7 +4,7 @@
 
     class ControladorUsuario{
         // Método para iniciar sesión
-        public function iniciarSesion($email, $password){
+        public function login($email, $password){
             $usuario = new Usuario();
             $usuario = $usuario->iniciarSesion($email, $password); // Llamar al modelo para iniciar sesión
             include 'views/usuarios/login.php'; // Incluir la vista de inicio de sesión

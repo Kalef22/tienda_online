@@ -1,8 +1,3 @@
-<?php
-    $informacion_path = "./views/informacion/";
-    $sobreNosotros_path = $informacion_path . "sobreNosotros.php";
-?>
-
 <body>
     <!-- Link a Google Fonts en la sección <head> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +31,7 @@
     <!-- Navigation Inicio-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.php">Joyería Victoria</a>
+            <a class="navbar-brand" href="/">Joyería Victoria</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -44,9 +39,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo $sobreNosotros_path ?>">Sobre nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASE_URL; ?>">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="informacion/sobreNosotros">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="informacion/contacto">Contacto</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
@@ -59,11 +54,10 @@
                             <li><a class="dropdown-item" href="#!">Nuevos productos</a></li>
                         </ul>
                     </li>
-
                 </ul>
                 <ul class="navbar-nav" style="list-style: none;">
                     <li class=" nav-item">
-                        <a class="nav-link" href="views/usuarios/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
+                        <a class="nav-link" href="./views/usuarios/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
                     </li>
                 </ul>
                 <form class="d-flex">

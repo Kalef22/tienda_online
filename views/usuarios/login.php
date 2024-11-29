@@ -2,6 +2,7 @@
     $title = 'Iniciar Sesión';
     include_once '../includes/header.php';
     include_once '../includes/nav.php';
+    echo "hola";
 ?>
 <link rel="stylesheet" href="assets/css/login.css">
     <!-- Contenido principal -->
