@@ -1,74 +1,12 @@
 <?php
 $title = "Inicio";
 require_once "./views/includes/header.php";
-?>
-<!-- CARRUSEL INICIO -->
-<div id="promotionsCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="d-block w-100 bg-primary text-white text-center">
-                <h5 class="carousel-text">Promoción 1</h5>
-                <p class="carousel-text">Descripción de la promoción 1.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-block w-100 bg-secondary text-white text-center">
-                <h5 class="carousel-text">Promoción 2</h5>
-                <p class="carousel-text">Descripción de la promoción 2.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-block w-100 bg-success text-white text-center">
-                <h5 class="carousel-text">Promoción 3</h5>
-                <p class="carousel-text">Descripción de la promoción 3.</p>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#promotionsCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#promotionsCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Siguiente</span>
-    </a>
-</div>
-<!-- CARRUSEL FIN -->
-
-<style>
-/* Establecer la altura máxima del carrusel para hacerlo mediano */
-#promotionsCarousel {
-    max-height: 25px;
-    /* Ajusta el valor según el tamaño deseado */
-}
-
-/* Estilo para los elementos del carrusel */
-#promotionsCarousel .carousel-item {
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Ajustar el tamaño de las letras al carrusel */
-.carousel-text {
-    font-size: 0.8rem; /* Ajusta el tamaño según sea necesario */
-    line-height: 1.2rem; /* Ajusta la altura de línea según sea necesario */
-}
-
-/* resaltar la tarjeta del producto cuando el usuario pasa el cursor sobre ella. */
-.card:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
-}
-</style>
-
-<?php
 require_once "./views/includes/nav.php";
-?>
 
-<!-- <style>
+// $date = new datetime();
+// echo $date->format('Y-m-d H:i:s');
+?>
+<style>
 /* Establecer la altura máxima del carrusel para hacerlo mediano */
 #myCarousel {
     max-height: auto;
@@ -135,7 +73,7 @@ img {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 </style>
-CARRUSEL INICIO
+<!-- CARRUSEL INICIO -->
 <div class="container-sm">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -149,22 +87,22 @@ CARRUSEL INICIO
             <div class="carousel-item active">
                 <img src="assets/img/home1.png" class="d-block w-100" alt="Imagen 1">
                 <div class="carousel-caption d-none d-md-block">
-                     <h5>Primera imagen</h5>
-                    <p>Descripción de la primera imagen.</p>
+                    <!-- <h5>Primera imagen</h5>
+                    <p>Descripción de la primera imagen.</p> -->
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="assets/img/home2.png" class=" d-block w-100" alt="Imagen 2">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Segunda imagen</h5>
-                    <p>Descripción de la segunda imagen.</p>
+                    <!-- <h5>Segunda imagen</h5>
+                    <p>Descripción de la segunda imagen.</p> -->
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="assets/img/home3.png" class="d-block w-100" alt="Imagen 3">
                 <div class="carousel-caption d-none d-md-block">
-                     <h5>Tercera imagen</h5>
-                    <p>Descripción de la tercera imagen.</p>
+                    <!-- <h5>Tercera imagen</h5>
+                    <p>Descripción de la tercera imagen.</p> -->
                 </div>
             </div>
         </div>
@@ -178,10 +116,10 @@ CARRUSEL INICIO
             <span class="visually-hidden">Siguiente</span>
         </button>
     </div>
-</div> -->
+</div>
 <!-- CARRUSEL FIN -->
 
-<!-- <div class="container my-4">
+<div class="container my-4">
     <div class="d-flex justify-content-center mb-4">
         <button class="btn btn-category mx-2" onclick="filtrarCategoria('anillos')">Anillos</button>
         <button class="btn btn-category mx-2" onclick="filtrarCategoria('pulseras')">Pulseras</button>
@@ -189,7 +127,7 @@ CARRUSEL INICIO
         <button class="btn btn-category mx-2" onclick="filtrarCategoria('pendientes')">Pendientes</button>
         <button class="btn btn-category mx-2" onclick="filtrarCategoria('aros')">Aros</button>
     </div>
-</div> -->
+</div>
 
 <!-- Section-->
 <section class="py-5">
@@ -200,7 +138,8 @@ CARRUSEL INICIO
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img src="assets/img/anillos/anillo1.png" alt=""> <!--tamaño imagen 450 x 300-->
+                    <img src="assets/img/anillos/anillo1.png" alt="">
+                    <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -227,6 +166,7 @@ CARRUSEL INICIO
                     </div>
                     <!-- Product image-->
                     <img src="assets/img/anillos/anillo2.png" alt="">
+                    <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -258,8 +198,9 @@ CARRUSEL INICIO
                     <!-- Sale badge-->
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
-                    <!-- Product image-->
                     <img src="assets/img/anillos/anillo3.png" alt="">
+                    <!-- Product image-->
+                    <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -661,22 +602,15 @@ CARRUSEL INICIO
     </div>
     </div>
 </section>
-<?php
-require_once './views/includes/footer.php';
-?>
-<!-- Incluir jQuery antes de Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Activar el carrusel para que itere automáticamente -->
-<script>
-$(document).ready(function(){
-    $('#promotionsCarousel').carousel({
-        interval: 2000 // Cambia el valor para ajustar la velocidad de iteración (en milisegundos)
-    });
-});
-</script>
-<!-- Core theme JS-->
-<script src="./assets/js/scripts.js"></script>
 </body>
-</html>
+<?php
+require_once 'views/includes/footer.php';
+?>
+<script>
+function filtrarCategoria(categoria) {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(producto => {
+        producto.style.display = producto.classList.contains(categoria) ? 'block' : 'none';
+    });
+}
+</script>y

@@ -2,9 +2,8 @@
     $title = 'Iniciar Sesión';
     include_once '../includes/header.php';
     include_once '../includes/nav.php';
-    echo "hola";
 ?>
-<link rel="stylesheet" href="assets/css/login.css">
+<!-- <link rel="stylesheet" href="assets/css/login.css"> -->
     <!-- Contenido principal -->
      <!-- Alineacion vertical y horizontal del main y altura minima del elemento -->
     <main class="d-flex justify-content-center align-items-center min-vh-100">
@@ -35,3 +34,19 @@
         // Incluir el footer
         include_once '../includes/footer.php'; 
     ?>
+<!-- Incluir jQuery antes de Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Activar el carrusel para que itere automáticamente -->
+<script>
+$(document).ready(function(){
+    $('#promotionsCarousel').carousel({
+        interval: 2000 // Cambia el valor para ajustar la velocidad de iteración (en milisegundos)
+    });
+});
+</script>
+<!-- Core theme JS-->
+<script src="../../assets/js/scripts.js"></script>
+</body>
+</html>

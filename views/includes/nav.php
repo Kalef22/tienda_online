@@ -1,3 +1,14 @@
+<?php
+// Cambiar según el entorno
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
+    // Entorno local
+    define('BASE_URL', 'http://localhost/tienda_online/');
+} else {
+    // Entorno de producción
+    define('BASE_URL', 'https://joyeriavictoria.kalef.es/'); // Ajusta tu dominio aquí
+}
+?>
+
 <body>
     <!-- Link a Google Fonts en la sección <head> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,12 +26,9 @@
     .btn,
     .dropdown-item {
         font-family: 'Roboto', sans-serif;
-    } 
+    }
 
-    /* <uniquifier>: Use a unique and descriptive class name
-      <weight>: Use a value from 400 to 900 */
-
-     .navbar-brand {
+    .navbar-brand {
         font-family: "Playfair Display", serif;
         font-optical-sizing: auto;
         font-weight: 400;
@@ -28,10 +36,10 @@
     }
     </style>
 
-    <!-- Navigation Inicio-->
+    <!-- Navigation Inicio -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="/">Joyería Victoria</a>
+            <a class="navbar-brand" href="<?php echo BASE_URL; ?>">Joyería Victoria</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -39,25 +47,42 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?= BASE_URL; ?>">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="informacion/sobreNosotros">Sobre nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="informacion/contacto">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL; ?>">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>views/informacion/sobreNosotros.php">Sobre
+                            nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>views/informacion/contacto.php">Contacto</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Todos los productos</a></li>
+                            <li>
+                                <a class="dropdown-item"
+                                    href="<?php echo BASE_URL; ?>views/producto/listadoProducto.php">Todos los
+                                    productos</a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="#!">Productos recomendados</a></li>
-                            <li><a class="dropdown-item" href="#!">Nuevos productos</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#!">Productos recomendados</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#!">Nuevos productos</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="navbar-nav" style="list-style: none;">
-                    <li class=" nav-item">
-                        <a class="nav-link" href="./views/usuarios/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>views/usuarios/login.php">
+                            <i class="bi bi-person"> Iniciar sesión</i>
+                        </a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -70,4 +95,4 @@
             </div>
         </div>
     </nav>
-    <!-- Navigation Fin-->
+    <!-- Navigation Fin -->
