@@ -3,60 +3,55 @@ $title = "Inicio";
 require_once "./views/includes/header.php";
 ?>
 <!-- CARRUSEL INICIO -->
-<div id="promotionsCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="d-block w-100 bg-primary text-white text-center">
-                <h5 class="carousel-text">Promoción 1</h5>
-                <p class="carousel-text">Descripción de la promoción 1.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-block w-100 bg-secondary text-white text-center">
-                <h5 class="carousel-text">Promoción 2</h5>
-                <p class="carousel-text">Descripción de la promoción 2.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="d-block w-100 bg-success text-white text-center">
-                <h5 class="carousel-text">Promoción 3</h5>
-                <p class="carousel-text">Descripción de la promoción 3.</p>
-            </div>
-        </div>
+<div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="promo-text">Envío gratis en tus compras.</div>
     </div>
-    <a class="carousel-control-prev" href="#promotionsCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#promotionsCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Siguiente</span>
-    </a>
+    <div class="carousel-item">
+      <div class="promo-text">Nueva colección de anillos: ¡Descúbrela!</div>
+    </div>
+    <div class="carousel-item">
+      <div class="promo-text">¡Descuentos exclusivos este fin de semana!</div>
+    </div>
+  </div>
 </div>
+
+
 <!-- CARRUSEL FIN -->
 
 <style>
-/* Establecer la altura máxima del carrusel para hacerlo mediano */
-#promotionsCarousel {
-    max-height: 25px;
-    /* Ajusta el valor según el tamaño deseado */
+#promoCarousel {
+  height: 25px; /* Altura del carrusel */
+  overflow: hidden;
+  background-color: #41F24D; /* Color de fondo */
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
 }
 
-/* Estilo para los elementos del carrusel */
-#promotionsCarousel .carousel-item {
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.carousel-inner {
+  height: 100%; /* Asegura que los elementos hijos ocupen el espacio completo */
 }
 
-/* Ajustar el tamaño de las letras al carrusel */
-.carousel-text {
-    font-size: 0.8rem; /* Ajusta el tamaño según sea necesario */
-    line-height: 1.2rem; /* Ajusta la altura de línea según sea necesario */
+.carousel-item {
+  height: 25px; /* Mantén la altura del carrusel */
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  text-align: center;
 }
 
-/* resaltar la tarjeta del producto cuando el usuario pasa el cursor sobre ella. */
+.promo-text {
+  font-size: 14px; /* Tamaño del texto */
+  color: #fff; /* Texto blanco */
+  white-space: nowrap; /* Evita que el texto se divida */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Añade puntos suspensivos si es necesario */
+  line-height: 25px; /* Asegura que el texto esté centrado verticalmente */
+  margin: 0; /* Evita márgenes que puedan desalinear el texto */
+}
+
 .card:hover {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
@@ -670,11 +665,11 @@ require_once './views/includes/footer.php';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Activar el carrusel para que itere automáticamente -->
 <script>
-$(document).ready(function(){
-    $('#promotionsCarousel').carousel({
-        interval: 2000 // Cambia el valor para ajustar la velocidad de iteración (en milisegundos)
-    });
+var carousel = new bootstrap.Carousel('#promoCarousel', {
+  interval: 4000, // Cambia cada 3 segundos
+  ride: 'carousel'
 });
+
 </script>
 <!-- Core theme JS-->
 <script src="./assets/js/scripts.js"></script>
