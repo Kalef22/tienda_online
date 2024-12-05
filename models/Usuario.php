@@ -1,69 +1,91 @@
 <?php
+include_once '../config/Conexion.php';
 
 class Usuario{
     private $pdo;
     private $error = [];
-    // const DB_HOST = "localhost";
-    // const DB_NAME = "tienda_online";
-    // const DB_USER = "admin";
-    // const DB_PASS = "NstF2@O@U6yBqaF6";
-   // Obtener las variables de entorno (estos valores vienen de GitHub Secrets)
-   
-  
     
     public function __construct() {
         try {
-            
-            $dsn = "mysql:host=" . self::DB_HOST . ";dbname=" . self::DB_NAME;
-            $this->pdo = new PDO($dsn, self::DB_USER, self::DB_PASS);
+            $this->pdo = (new Conexion())->getConexion();
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          
         } catch (PDOException $e) {
             $this->error['error_conexion'] = "Error de conexion: " . $e->getMessage();
         }
     }
 
-    public function getErrors() {
-        return $this->error;
-    }
+    public function login($email, $password) {
+        try {
+            $query_iniciar = 'SELECT id_cliente, nombre, apellido1, apellido2, email, direccion, telefono, fecha_nacimiento, contrasenia, rol, fecha_registro FROM cliente WHERE email = :email';
+            $stmt_iniciar = $this->pdo->prepare($query_iniciar);
+            $stmt_iniciar->bindParam(':email', $email);
+            $stmt_iniciar->execute();
+            $usuario = $stmt_iniciar->fetch(PDO::FETCH_ASSOC);
 
-    public function iniciarSesion($email, $password) {
-        try{
-            $query = 'SELECT id_cliente,nombre, apellido1, apellido2, email, direccion, telefono FROM cliente WHERE email = :email AND contrasenia = :contrasenia';
-            $stmt = $this->pdo->prepare($query);
-            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-            $stmt->bindParam(':contrasenia', $password, PDO::PARAM_STR);
-            $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($usuario && password_verify($password, $usuario['contrasenia'])) {
+                return $usuario;
+            } else {
+                return false;
+            }
         } catch (PDOException $e) {
             $this->error['error_login'] = "Error al iniciar sesión: " . $e->getMessage();
             return false;
         }
     }
 
-    public function cerrarSesion() {
+// ----------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
+
+    public function getConnection() {
+        return $this->pdo;
+    }
+
+    public function getErrors() {
+        return $this->error;
+    }
+
+    public function emailExists($email) {
+        try {
+            $query = 'SELECT COUNT(*) FROM cliente WHERE email = :email';
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            $count = $stmt->fetchColumn();
+            return $count > 0;
+        } catch (PDOException $e) {
+            $this->error['error_email'] = "Error al verificar el correo: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function logout() {
         session_start();
         session_destroy();
         header('Location: ../index.php');
     }
 
-    public function crearUsuario($nombre, $apellido1, $apellido2, $email, $direccion, $telefono, $contrasenia){
-        try{
-        $query_crear = "INSERT INTO cliente (nombre, apellido1, apellido2, email, direccion, telefono, contrasenia) VALUES (:nombre, :apellido1, :apellido2, :email, :direccion, :telefono, :contrasenia)";
-        $stmt_crear = $this->pdo->prepare($query_crear);
-        $stmt_crear->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-        $stmt_crear->bindParam(':nombre', $apellido1, PDO::PARAM_STR);
-        $stmt_crear->bindParam(':nombre', $apellido2, PDO::PARAM_STR);
-        $stmt_crear->bindParam(':nombre', $email, PDO::PARAM_STR);
-        $stmt_crear->bindParam(':nombre', $direccion, PDO::PARAM_STR);
-        $stmt_crear->bindParam(':nombre', $telefono, PDO::PARAM_STR);
-        $stmt_crear->bindParam(':nombre', $contrasenia, PDO::PARAM_STR);
-        $stmt_crear->execute();
-        return true;
-        }catch(PDOException $e){
-            $error['error_crear']= "Error al crear usuario: ".$e->getMessage();
+    public function crearUsuario($nombre, $apellido1, $apellido2, $email, $direccion, $telefono, $fecha_nacimiento, $contrasenia) {
+        try {
+            $rol = "superadmin";
+            $contrasenia_cifrada = password_hash($contrasenia, PASSWORD_DEFAULT); // Cifrar la contraseña
+            $query_crear = 'INSERT INTO cliente (nombre, apellido1, apellido2, email, direccion, telefono, fecha_nacimiento, contrasenia, rol) VALUES (:nombre, :apellido1, :apellido2, :email, :direccion, :telefono, :fecha_nacimiento, :contrasenia, :rol)';
+            $stmt_crear = $this->pdo->prepare($query_crear);
+            $stmt_crear->bindParam(':nombre', $nombre);
+            $stmt_crear->bindParam(':apellido1', $apellido1);
+            $stmt_crear->bindParam(':apellido2', $apellido2);
+            $stmt_crear->bindParam(':email', $email);
+            $stmt_crear->bindParam(':direccion', $direccion);
+            $stmt_crear->bindParam(':telefono', $telefono);
+            $stmt_crear->bindParam(':fecha_nacimiento', $fecha_nacimiento);
+            $stmt_crear->bindParam(':contrasenia', $contrasenia_cifrada); // Almacenar la contraseña cifrada
+            $stmt_crear->bindParam(':rol', $rol);
+            $stmt_crear->execute();
+            return true;
+        } catch (PDOException $e) {
+            $this->error['error_crear'] = "Error al crear usuario: " . $e->getMessage();
             return false;
         }
-        
     }
 
     public function listarUsuarios(){

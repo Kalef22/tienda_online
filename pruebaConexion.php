@@ -1,7 +1,7 @@
 <?php
 require_once 'config/config.php';
 try{
-    $pdo = (new conexion())->getConexion();
+    $pdo = (new Conexion())->getConexion();
 
     $query_listar ="SELECT id_cliente, nombre, apellido1, apellido2, email, rol FROM cliente";
     $stmt_listar = $pdo->prepare($query_listar);

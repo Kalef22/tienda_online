@@ -1,12 +1,14 @@
 <?php
+session_start();
+
 // Cambiar según el entorno
-if ($_SERVER['HTTP_HOST'] == 'localhost') {
-    // Entorno local
-    define('BASE_URL', 'http://localhost/tienda_online/');
-} else {
-    // Entorno de producción
-    define('BASE_URL', 'https://joyeriavictoria.kalef.es/'); // Ajusta tu dominio aquí
-}
+// if ($_SERVER['HTTP_HOST'] == 'localhost') {
+//     // Entorno local
+//     define('BASE_URL', 'http://localhost/tienda_online/');
+// } else {
+//     // Entorno de producción
+//     define('BASE_URL', 'https://joyeriavictoria.kalef.es/'); // Ajusta tu dominio aquí
+// }
 ?>
 
 <body>
@@ -77,13 +79,36 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
                             </li>
                         </ul>
                     </li>
+                    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'superadmin'): ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="adminDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+                        <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>views/admin/dashboard">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>views/admin/subir_producto.php">Subir producto</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>views/admin/eliminar_producto.php">Eliminar producto</a></li>
+                        </ul>
+                    </li>
+                    <?php endif; ?>
                 </ul>
                 <ul class="navbar-nav" style="list-style: none;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>views/usuarios/login.php">
-                            <i class="bi bi-person"> Iniciar sesión</i>
-                        </a>
+                    <?php if (isset($_SESSION['nombre'])): ?>
+                    <li>
+                        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'superadmin'): ?>
+                        <img src="<?php echo BASE_URL; ?>assets/img/admin_logo.jpg" alt="Admin Logo" style="width: 30px; height: auto;">
+                        <?php endif; ?>
                     </li>
+                    <li class="nav-item">
+                        <span class="nav-link">Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?>!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>views/usuarios/logout.php"><i class="bi bi-box-arrow-right"> Cerrar sesión</i></a>
+                    </li>
+                    <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>views/usuarios/login.php"><i class="bi bi-person"> Iniciar sesión</i></a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">

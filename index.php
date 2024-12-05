@@ -1,6 +1,8 @@
 <?php
+session_start();
 $title = "Inicio";
 require_once "./views/includes/header.php";
+require_once "./controllers/ControladorProducto.php";
 ?>
 <!-- CARRUSEL INICIO -->
 <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -659,19 +661,19 @@ CARRUSEL INICIO
 <?php
 require_once './views/includes/footer.php';
 ?>
-<!-- Incluir jQuery antes de Bootstrap JS -->
+<!-- Incluir jQuery antes de Bootstrap JS
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<!-- Bootstrap JS -->
+Bootstrap JS
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Activar el carrusel para que itere automáticamente -->
+Activar el carrusel para que itere automáticamente
 <script>
 var carousel = new bootstrap.Carousel('#promoCarousel', {
-  interval: 4000, // Cambia cada 3 segundos
+  interval: 6000, // Cambia cada 3 segundos
   ride: 'carousel'
 });
 
 </script>
-<!-- Core theme JS-->
+Core theme JS
 <script src="./assets/js/scripts.js"></script>
 </body>
-</html>
+</html> -->
