@@ -34,7 +34,7 @@ include_once '../includes/nav.php';
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <?php
             // Incluir el controlador de productos
-            include_once '../../controllers/ControladorProducto.php';
+            include_once '../../controllers/controladorProducto.php';
             $controladorProducto = new ControladorProducto();
             $productos = $controladorProducto->mostrarProductos_controlador();         
             ?>

@@ -2,7 +2,7 @@
 session_start();
 $title = "Inicio";
 require_once "./views/includes/header.php";
-require_once "./controllers/ControladorProducto.php";
+require_once "./controllers/controladorProducto.php";
 ?>
 <!-- CARRUSEL INICIO -->
 <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
