@@ -10,7 +10,7 @@ Esquema que seguire.
 │   └── /images    # Imágenes
 │
 ├── /controllers   # Controladores PHP (lógica de negocio)
-│   └── productController.php  # Controlador para los productos
+│   └── controladorProducto.php  # Controlador para los productos
 │
 ├── /models        # Modelos PHP (interacción con la base de datos)
 │   └── Product.php  # Modelo para productos
